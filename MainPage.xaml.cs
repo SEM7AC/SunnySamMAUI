@@ -223,10 +223,14 @@ namespace SunnySamMAUI
                     var response = await client.GetStringAsync(url);
                     var weatherInfo = JsonConvert.DeserializeObject<Root>(response);
 
+                    double temperature = weatherInfo.main.temp ?? 0; // Default to 0 if null
+
                     UserWeatherIcon.Source = "https://openweathermap.org/img/w/" + weatherInfo.weather[0].icon + ".png";
                     UserWeatherCondition.Text = weatherInfo.weather[0].description;
                     UserTemperature.Text = $"{weatherInfo.main.temp} °F";
                     UserWindDetails.Text = $"Wind: {weatherInfo.wind.speed} mph";
+
+                    await PlayWeatherTTS(temperature);
                 }
             }
             catch (Exception ex)
