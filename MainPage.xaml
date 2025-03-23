@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SunnySamMAUI.MainPage" Title="">
+    <VerticalStackLayout>
+        <!-- Custom Header -->
+        <Grid HeightRequest="60">
+            <!-- Gradient Background -->
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#FF5733" Offset="0.0" />
+                    <GradientStop Color="#FFC300" Offset="1.0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <!-- Title Label -->
+            <Label Text="SunnySam"
+                   TextColor="White"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <!-- Main Content -->
+        <Grid Padding="20" ColumnDefinitions="*,3,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+            <!-- Left Column: Geolocation Weather -->
+            <Label Grid.Column="0" Grid.Row="0" Text="Your Location:" FontAttributes="Bold" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Entry Grid.Column="0" Grid.Row="1" x:Name="CityEntry" Placeholder="Your city..." IsReadOnly="True" 
+                   HorizontalTextAlignment="Center" VerticalOptions="Center" WidthRequest="200" />
+            <Image Grid.Column="0" Grid.Row="2" x:Name="WeatherIcon" HeightRequest="100" WidthRequest="100" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Grid.Column="0" Grid.Row="3" x:Name="WeatherCondition" FontSize="20" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Grid.Column="0" Grid.Row="4" x:Name="Temperature" FontSize="30" FontAttributes="Bold" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Grid.Column="0" Grid.Row="5" x:Name="WindDetails" FontSize="15" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Button Grid.Column="0" Grid.Row="7" Text="Refresh Weather" Clicked="OnRefreshWeatherClicked" 
+                    WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+
+            <!-- Divider Line Between Columns -->
+            <BoxView Grid.Column="1" Grid.RowSpan="8" BackgroundColor="Gray" WidthRequest="1" 
+                     HorizontalOptions="Center" VerticalOptions="Fill" />
+
+            <!-- Right Column: User-Entered City Weather -->
+            <Label Grid.Column="2" Grid.Row="0" Text="Other Location:" FontAttributes="Bold" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Entry Grid.Column="2" Grid.Row="1" x:Name="UserCityEntry" Text="Savannah" Placeholder="Enter another city..." 
+                   HorizontalTextAlignment="Center" VerticalOptions="Center" WidthRequest="200" />
+            <Image Grid.Column="2" Grid.Row="2" x:Name="UserWeatherIcon" HeightRequest="100" WidthRequest="100" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Grid.Column="2" Grid.Row="3" x:Name="UserWeatherCondition" FontSize="20" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Grid.Column="2" Grid.Row="4" x:Name="UserTemperature" FontSize="30" FontAttributes="Bold" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Grid.Column="2" Grid.Row="5" x:Name="UserWindDetails" FontSize="15" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Button Grid.Column="2" Grid.Row="7" Text="Get Weather" Clicked="OnUserCityWeatherClicked" 
+                    WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

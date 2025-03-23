@@ -1,0 +1,98 @@
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+
+# Build results
+**/bin/
+**/obj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.vscode-test/
+
+# Other files and directories
+*~$*
+*.ncb
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+
+# Uncomment if you have added code analysis tools and want to 
+# exclude their output
+# *.StaticAnalysis.*.xml
+
+# MVC & server-side
+*.pri
+*.resjson
+*.geojson
+*.cityjson
+*.topojson
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Windows
+*.pdb
+*.exe
+*.dll
+*.config
+*.lib
+*.msp
+*.msi
+*.cab
+*.nupkg
+*.nuspec
+
+# WebAPI & MVC
+bin/
+obj/
+
+# StyleCop
+*.ruleset
+*.editorconfig
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of the `.nuget\nuget.exe restore` command that downloads dependencies.
+**/[Pp]ackages/*
+
+# Include `!Packages` if you don't want to ignore the folder itself.
+
+# Visual Studio 2019/2022 cache folder
+.vs/
+
